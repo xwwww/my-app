@@ -2,25 +2,51 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+
+function LoginComponent(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <button className="square" onClick={props.onClick}>
+      {props.value}
+    </button>
   );
 }
 
-export default App;
+class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null),
+      xIsNext: true
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="login">
+          <LoginComponent />
+        </div>
+        <div>
+          <div>发现音乐</div>
+          <div>私人 FM</div>
+          <div>视频</div>
+          <div>朋友</div>
+        </div>
+      </div>
+    )
+  }
+}
+
+class app extends React.Component {
+  render() {
+    return (
+      <div className="game">
+        <div className="game-board">
+          <Layout />
+        </div>
+      </div>
+    );
+  }
+}
+
+export default app;
