@@ -1,10 +1,5 @@
 /*
- * @Des: 页面、组件说明
- * @Author: ur name
- * @Date: 2020-09-29 15:50:55
- * @query: {string} p1  内容ID
- * @props: {string} p1  数据源
- * @event: {string} p1  des
+ * @Des: 拖拽
  */
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Observable, fromEvent } from 'rxjs'
